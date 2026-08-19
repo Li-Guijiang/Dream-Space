@@ -1,0 +1,1 @@
+import{T as e}from"./index-DxFHNOEQ.js";var t=()=>e.request(`get`,`/api/tags`),n=t=>e.request(`post`,`/api/tags`,{data:t}),r=(t,n)=>e.request(`put`,`/api/tags/${t}`,{data:n}),i=t=>e.request(`delete`,`/api/tags/${t}`);export{r as i,i as n,t as r,n as t};

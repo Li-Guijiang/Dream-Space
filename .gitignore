@@ -1,0 +1,79 @@
+# 依赖
+node_modules/
+.pnp
+.pnp.*
+
+# 构建产物
+.next/
+out/
+build/
+!Kirameku-backend/admin/build/
+dist/
+
+# 环境变量
+.env
+.env.*
+!.env.example
+!.env.development
+!.env.production
+!.env.staging
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+*.pem
+
+# IDE & AI
+.idea/
+.vscode/
+.claude/
+CLAUDE.md
+*.swp
+*.swo
+
+# 日志
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+*.log
+
+# 数据库
+*.db
+*.sqlite
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Vercel
+.vercel
+
+# 上传文件
+uploads/
+
+# 压缩包
+*.zip
+
+# 其他
+.eslintcache
+report.html
+
+# Star 记录
+star-history.md
+
+# 阅读服务端
+reader-master/
+
+# 深度学习
+deep-learning/
+
+# Kova
+Kova/

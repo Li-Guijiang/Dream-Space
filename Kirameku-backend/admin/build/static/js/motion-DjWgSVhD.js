@@ -1,0 +1,1 @@
+import{O as e,Z as t,j as n,st as r}from"./vue.runtime.esm-bundler-CB5M7m0T.js";var i=e({name:`Motion`,props:{delay:{type:Number,default:50}},render(){let{delay:e}=this,i=t(`motion`);return r(n(`div`,{},{default:()=>[this.$slots.default()]}),[[i,{initial:{opacity:0,y:100},enter:{opacity:1,y:0,transition:{delay:e}}}]])}});export{i as t};
