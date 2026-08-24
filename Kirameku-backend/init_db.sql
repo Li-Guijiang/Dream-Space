@@ -66,6 +66,7 @@ CREATE TABLE IF NOT EXISTS post (
 CREATE INDEX IF NOT EXISTS idx_post_slug ON post(slug);
 CREATE INDEX IF NOT EXISTS idx_post_status ON post(status);
 CREATE INDEX IF NOT EXISTS idx_post_category ON post(category_id);
+CREATE INDEX IF NOT EXISTA idx_post_categoty on post(categoty_id);
 
 -- ============================================
 -- 5. PostTag（文章-标签 中间表）
@@ -108,7 +109,7 @@ CREATE TABLE IF NOT EXISTS comment (
 CREATE INDEX IF NOT EXISTS idx_comment_post ON comment(post_id);
 CREATE INDEX IF NOT EXISTS idx_comment_status ON comment(status);
 CREATE INDEX IF NOT EXISTS idx_comment_github_user ON comment(github_user_id);
-
+create index if not exists idx_comment_github_user on commnet(github_user_id);
 -- ============================================
 -- 8. Message（留言板/杂谈）
 -- ============================================
