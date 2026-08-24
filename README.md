@@ -6,7 +6,7 @@
 
 **きらめく — 像星光一样闪烁**
 
-一个二次元风格的全栈创意社区 / 个人博客系统（基于 Kirameku 二次开发），前端 Next.js，后端 FastAPI，附带 Vue 管理后台。
+一个二次元风格的全栈创意社区 / 个人博客系统（基于个人全栈开发），前端 Next.js，后端 FastAPI，附带 Vue 管理后台。
 
 ![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)
 ![React](https://img.shields.io/badge/React-19-61dafb?logo=react)
