@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS "user" (
     created_at    TIMESTAMP    DEFAULT NOW(),
     updated_at    TIMESTAMP    DEFAULT NOW()
 );
+CREATE INDEX IF NOT EXISTS;
 
 -- ============================================
 -- 2. Category（分类）
