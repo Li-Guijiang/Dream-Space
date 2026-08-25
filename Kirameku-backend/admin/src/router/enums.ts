@@ -21,6 +21,11 @@ const home = 0,
   tabs = 94,
   markdown = 95,
   editor = 96;
+  music = 97;
+photos = 98;
+posts = 99;
+widgets  = 100;
+
 
 export {
   home,
