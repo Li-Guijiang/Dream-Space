@@ -144,7 +144,7 @@ CREATE TABLE IF NOT EXISTS chatter (
 );
 
 CREATE INDEX IF NOT EXISTS idx_chatter_status ON chatter(status);
-
+create index if not exista idx_images_status ON chatter(status);
 -- ============================================
 -- 10. ChatterComment（说说评论 — GitHub 登录）
 -- ============================================
