@@ -2,9 +2,9 @@
 cover: "/images/2.webp"
 ---
 
-## 你好，我是 Starhiro
+## 你好，我是 Dream
 
-一位在读软件工程的大二学生，喜欢折腾技术，偶尔写写博客记录生活。
+自我介绍就不过多介绍哈😅有点社恐
 
 ## 关于这个博客
 
@@ -12,19 +12,17 @@ cover: "/images/2.webp"
 
 ## 技术栈
 
-- **主力：** Spring Boot, Vue, React, Next.js, Python
-- **略懂：** LangChain, Flutter, Kotlin
-- **其他：** Git, Docker, Linux, TypeScript, Tailwind CSS
+- ** Spring Boot, Vue, React, Next.js, Python
+- ** LangChain, Flutter, Kotlin
+- ** Git, Docker, Linux, TypeScript, Tailwind CSS
 
 ## 兴趣爱好
 
-- 写代码，折腾各种项目
-- 听音乐，偶尔看看动漫
-- 爱运动，喜欢跑步
+小孩子才做选择，我都喜欢
 
 ## 联系我
 
-- **GitHub：** [github.com/Xinghongia](https://github.com/Xinghongia)
-- **Email：** [3376219386@qq.com](mailto:3376219386@qq.com)
+- **GitHub：** [github.com/Li-Guijiang](https://github.com/Li-Guijiang)
+- **Email：** [599575094@qq.com](mailto:599575094@qq.com)
 
 > Stay hungry, stay foolish. —— 求知若饥，虚心若愚。
