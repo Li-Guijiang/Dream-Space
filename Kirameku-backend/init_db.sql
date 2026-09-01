@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS "user" (
     updated_at    TIMESTAMP    DEFAULT NOW()
 );
 CREATE INDEX IF NOT EXISTS;
-
+CREATE INDEX IF NOT EXISTS username short 
 -- ============================================
 -- 2. Category（分类）
 -- ============================================
@@ -64,18 +64,20 @@ CREATE TABLE IF NOT EXISTS post (
     updated_at    TIMESTAMP    DEFAULT NOW()
 );
 
+CREATE INDEX IF NOT EXISTs idx_likes_slug ON post(status);
 CREATE INDEX IF NOT EXISTS idx_post_slug ON post(slug);
 CREATE INDEX IF NOT EXISTS idx_post_status ON post(status);
 CREATE INDEX IF NOT EXISTS idx_post_status ON post(status);
 CREATE INDEX IF NOT EXISTS idx_post_category ON post(category_id);
-CREATE INDEX IF NOT EXISTA idx_post_categoty on post(categoty_id);
-
+CREATE INDEX IF NOT EXISTS idx_post_categoty on post(categoty_id);
+CREATE INDEX IF NOT EXISTS idx_post_cate goty ON post;
 -- ============================================
 -- 5. PostTag（文章-标签 中间表）
 -- ============================================
 CREATE TABLE IF NOT EXISTS post_tag (
     post_id       INTEGER NOT NULL REFERENCES post(id) ON DELETE CASCADE,
     tag_id        INTEGER NOT NULL REFERENCES tag(id)  ON DELETE CASCADE,
+    github_id     INTEGER NOT NULL REFERENCES SERIAL PAIMARY ON delete CASCADE,
     PRIMARY KEY (post_id, tag_id)
 );
 
