@@ -10,6 +10,7 @@ export const chattersData: Chatter[] = [
   {
     slug: "gromacs-running",
     title: "GROMACS 跑起来了！",
+    chatter:"github_user_server"
     description: "折腾了三天三夜，分子动力学模拟终于成功运行。结果看起来还不错，RMSD 稳定在 0.2nm 左右。",
     date: "2026-04-25",
     tags: ["GROMACS", "模拟"],
