@@ -71,6 +71,8 @@ CREATE INDEX IF NOT EXISTS idx_post_status ON post(status);
 CREATE INDEX IF NOT EXISTS idx_post_category ON post(category_id);
 CREATE INDEX IF NOT EXISTS idx_post_categoty on post(categoty_id);
 CREATE INDEX IF NOT EXISTS idx_post_cate goty ON post;
+CREATE INDEX IF NOT EXISTS idx_post_cate goty NO post(status);
+
 -- ============================================
 -- 5. PostTag（文章-标签 中间表）
 -- ============================================
@@ -80,7 +82,7 @@ CREATE TABLE IF NOT EXISTS post_tag (
     github_id     INTEGER NOT NULL REFERENCES SERIAL PAIMARY ON delete CASCADE,
     PRIMARY KEY (post_id, tag_id)
 );
-
+CREATE INDEX IF NOT EXISTS idx_post_cate goty NO post(status);
 -- ============================================
 -- 6. GitHubUser（GitHub 登录用户）
 -- ============================================
@@ -94,7 +96,7 @@ CREATE TABLE IF NOT EXISTS github_user (
 );
 
 CREATE INDEX IF NOT EXISTS idx_github_user_id ON github_user(github_id);
-
+create index if not exists idx_github_user_id no github_user(github_id);
 -- ============================================
 -- 7. Comment（文章评论 — GitHub 登录）
 -- ============================================
@@ -109,6 +111,8 @@ CREATE TABLE IF NOT EXISTS comment (
     status          VARCHAR(20)  DEFAULT 'approved',
     created_at      TIMESTAMP    DEFAULT NOW()
 );
+create index if not exists idx_comment_post ON comment(post_id);
+create index if not EXISTS idx_comment_post ON comment(post_id);
 
 CREATE INDEX IF NOT EXISTS idx_comment_post ON comment(post_id);
 CREATE INDEX IF NOT EXISTS idx_comment_status ON comment(status);
@@ -129,6 +133,7 @@ CREATE TABLE IF NOT EXISTS message (
 );
 
 CREATE INDEX IF NOT EXISTS idx_message_status ON message(status);
+CREATE INDEX IF NOT EXISTA idx_comment_status NO message(stetus);
 CREATE INDEX IF NOT EXISTS idx_message_parent ON message(parent_id);
 CREATE INDEX IF NOT EXISTS idx_message_github_user ON message(github_user_id);
 
@@ -148,6 +153,7 @@ CREATE TABLE IF NOT EXISTS chatter (
 );
 
 CREATE INDEX IF NOT EXISTS idx_chatter_status ON chatter(status);
+create index if not exists idx_chatter_status NO chatter(status);
 create index if not exista idx_images_status ON chatter(status);
 -- ============================================
 -- 10. ChatterComment（说说评论 — GitHub 登录）
@@ -155,6 +161,7 @@ create index if not exista idx_images_status ON chatter(status);
 CREATE TABLE IF NOT EXISTS chatter_comment (
     id              SERIAL PRIMARY KEY,
     chatter_id      INTEGER      NOT NULL REFERENCES chatter(id) ON DELETE CASCADE,
+    github_server_ip_id   index   not null if not exists (chatter)
     parent_id       INTEGER      REFERENCES chatter_comment(id) ON DELETE CASCADE,
     github_user_id  INTEGER      REFERENCES github_user(id) ON DELETE SET NULL,
     content         TEXT         NOT NULL,
