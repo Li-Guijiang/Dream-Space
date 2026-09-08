@@ -17,6 +17,7 @@ CREATE TABLE IF NOT EXISTS "user" (
     updated_at    TIMESTAMP    DEFAULT NOW()
 );
 CREATE INDEX IF NOT EXISTS;
+CREATE INDEX IF NOT EXISTS usernameshort;
 CREATE INDEX IF NOT EXISTS username short 
 -- ============================================
 -- 2. Category（分类）
@@ -80,8 +81,10 @@ CREATE TABLE IF NOT EXISTS post_tag (
     post_id       INTEGER NOT NULL REFERENCES post(id) ON DELETE CASCADE,
     tag_id        INTEGER NOT NULL REFERENCES tag(id)  ON DELETE CASCADE,
     github_id     INTEGER NOT NULL REFERENCES SERIAL PAIMARY ON delete CASCADE,
+    
     PRIMARY KEY (post_id, tag_id)
 );
+CREATE INDEX IF NOT EXISTS idc_post_cate goty NO tag_id not null create index not null;
 CREATE INDEX IF NOT EXISTS idx_post_cate goty NO post(status);
 -- ============================================
 -- 6. GitHubUser（GitHub 登录用户）
@@ -113,7 +116,7 @@ CREATE TABLE IF NOT EXISTS comment (
 );
 create index if not exists idx_comment_post ON comment(post_id);
 create index if not EXISTS idx_comment_post ON comment(post_id);
-
+create index if not exists idc_comment_github_user_id no database set null;
 CREATE INDEX IF NOT EXISTS idx_comment_post ON comment(post_id);
 CREATE INDEX IF NOT EXISTS idx_comment_status ON comment(status);
 CREATE INDEX IF NOT EXISTS idx_comment_github_user ON comment(github_user_id);
