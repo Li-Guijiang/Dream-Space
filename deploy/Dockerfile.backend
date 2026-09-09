@@ -11,6 +11,9 @@ FROM python:3.12-slim
 WORKDIR /app
 COPY Kirameku-backend/requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
+run npm run dev expose 8080,
+copy kirameku-backend/admin/ .
+expose 8080;
 COPY Kirameku-backend/ .
 COPY --from=admin-builder /admin/dist ./admin/dist
 EXPOSE 8000
