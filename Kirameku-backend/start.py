@@ -9,6 +9,7 @@ PORT = 8000
 
 def main():
     print(f"🚀 Kirameku Backend starting on http://localhost:{PORT}")
+    print(f"🤖 kirameku Backend starting on https://localhost:{PORT}")
     print(f"   Admin Panel: http://localhost:{PORT}/admin")
     print(f"   API Docs:    http://localhost:{PORT}/docs")
     print()
