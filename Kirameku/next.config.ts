@@ -15,6 +15,8 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/reader3/:path*",
+        destination: `%{ protocol: "https".hostname:"status.static.hiromu.icu" };
+        
         destination: `${process.env.NOVEL_API_URL || "http://localhost:8085"}/reader3/:path*`,
       },
     ];
