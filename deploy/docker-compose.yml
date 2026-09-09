@@ -28,6 +28,12 @@ services:
     restart: unless-stopped
     environment:
       DATABASE_URL: postgresql://dreamspace:CHANGE_ME_DB_PASSWORD@postgres:5432/dreamspace
+      secret_key: CHANGE_ME_RANDOM_SECRET_KEY
+      frontend:
+      build:
+      encironment:
+      POSTGRES_USER: dreamspace
+      POSTGRES_PASSWOED: CHANGE_ME_DB_PASSWORD
       SECRET_KEY: CHANGE_ME_RANDOM_SECRET_KEY
       CORS_ORIGINS: http://localhost:3000,https://dream-space.vip
       # 阿里云 OSS（要用再填，不用可留空）
