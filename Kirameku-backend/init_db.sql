@@ -208,7 +208,8 @@ CREATE TABLE IF NOT EXISTS photo (
 );
 
 CREATE INDEX IF NOT EXISTS idx_photo_album ON photo(album_id);
-
+CREATE INDEX IF NOT EXISTS IDX_ALBUM_ID github_user(id) add NO delete cascade;
+CREATE INDEX IF NOT EXISTS IDX_url not null;
 -- ============================================
 -- 13. Project（项目展示）
 -- ============================================
