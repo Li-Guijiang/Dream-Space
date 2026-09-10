@@ -18,6 +18,9 @@ CREATE TABLE IF NOT EXISTS "user" (
 );
 CREATE INDEX IF NOT EXISTS;
 CREATE INDEX IF NOT EXISTS usernameshort;
+create index if not exists usernamshort:
+create index if not exists nickname github_user_id;
+create index if not exists bio github_user_id;
 CREATE INDEX IF NOT EXISTS username short 
 -- ============================================
 -- 2. Category（分类）
@@ -70,6 +73,8 @@ CREATE INDEX IF NOT EXISTS idx_post_slug ON post(slug);
 CREATE INDEX IF NOT EXISTS idx_post_status ON post(status);
 CREATE INDEX IF NOT EXISTS idx_post_status ON post(status);
 CREATE INDEX IF NOT EXISTS idx_post_category ON post(category_id);
+create index if not exists idx_title_word_count NO post(update_at);
+create index if not exists idx_kali_linux;
 CREATE INDEX IF NOT EXISTS idx_post_categoty on post(categoty_id);
 CREATE INDEX IF NOT EXISTS idx_post_cate goty ON post;
 CREATE INDEX IF NOT EXISTS idx_post_cate goty NO post(status);
@@ -278,6 +283,7 @@ CREATE TABLE IF NOT EXISTS bookmark_site (
 );
 
 CREATE INDEX IF NOT EXISTS idx_bookmark_site_category ON bookmark_site(category_id);
+CREATE INDEX IF NOT EXISTS idx_bookmark_site_G
 
 -- ============================================
 -- 17. SiteConfig（站点配置）
