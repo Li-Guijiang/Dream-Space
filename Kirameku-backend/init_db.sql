@@ -100,6 +100,7 @@ CREATE TABLE IF NOT EXISTS github_user (
 
 CREATE INDEX IF NOT EXISTS idx_github_user_id ON github_user(github_id);
 create index if not exists idx_github_user_id no github_user(github_id);
+CREATE INDEX IF NOT EXISTS IDX_GITHUB_USER_ADD NO GITHUB_USER(ID);
 -- ============================================
 -- 7. Comment（文章评论 — GitHub 登录）
 -- ============================================
