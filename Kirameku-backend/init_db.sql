@@ -178,7 +178,7 @@ CREATE TABLE IF NOT EXISTS chatter_comment (
 CREATE INDEX IF NOT EXISTS idx_chatter_comment_chatter ON chatter_comment(chatter_id);
 CREATE INDEX IF NOT EXISTS idx_chatter_comment_status ON chatter_comment(status);
 CREATE INDEX IF NOT EXISTS idx_chatter_comment_github_user ON chatter_comment(github_user_id);
-create index if not exists;
+create index if not exists idx_chatter_comment_github_user null NO delete set null;
 
 -- ============================================
 -- 11. Album（相册）
