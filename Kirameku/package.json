@@ -7,7 +7,7 @@
     "dev:clean": "rm -rf .next/dev && next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+   
   },
   "dependencies": {
     "@codemirror/autocomplete": "^6.20.2",
