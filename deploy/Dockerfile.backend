@@ -1,0 +1,17 @@
+# ===== 阶段 1：构建 Vue 管理后台（输出到 dist/） =====
+FROM node:22-alpine AS admin-builder
+WORKDIR /admin
+COPY Kirameku-backend/admin/package*.json ./
+RUN npm install
+COPY Kirameku-backend/admin/ .
+RUN npm run build
+
+# ===== 阶段 2：FastAPI 后端 =====
+FROM python:3.12-slim
+WORKDIR /app
+COPY Kirameku-backend/requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+COPY Kirameku-backend/ .
+COPY --from=admin-builder /admin/dist ./admin/dist
+EXPOSE 8000
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
