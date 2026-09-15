@@ -340,7 +340,7 @@ export default function MomentsPage() {
                         <div className="p-3 md:p-5">
                           <div className="flex items-center justify-between mb-2 md:mb-3">
                             <div className="flex items-center gap-1.5 md:gap-2">
-                              <Image src="/images/hong.jpg" alt="avatar" width={24} height={24} className="rounded-full object-cover md:w-7 md:h-7" />
+                              <Image src="/images/liguijiagn.jpg" alt="avatar" width={24} height={24} className="rounded-full object-cover md:w-7 md:h-7" />
                               <span className="text-xs md:text-sm font-semibold text-slate-800 dark:text-slate-200">{siteConfig.authorName}</span>
                               <span className="text-[10px] md:text-xs text-slate-400">{relativeTime(moment.created_at)}</span>
                             </div>

@@ -8,18 +8,20 @@ export const siteConfig = {
   bio: "你好，我是李贵江。梦境空间（Dream-Space）是我的个人博客，记录技术、生活与随想。",
 
   // 头像设置
-  avatarUrl: "/images/hong.jpg",
+  avatarUrl: "/images/liguijiagn.jpg",
 
-  // 背景设置
+  // 背景设置（支持图片 webp/jpg 或视频 mp4，动态壁纸）
   useGradient: false,
   themeColors: ["#a18cd1", "#fbc2eb", "#a1c4fd", "#c2e9fb"],
   bgImages: [
-    "/images/1.webp",
-    "/images/42.webp",
-    "/images/20.webp",
-    "/images/36.webp",
-    "/images/39.webp",
-    "/images/41.webp",
+    "/videos/bg1.mp4",
+    "/videos/bg2.mp4",
+    "/videos/bg3.mp4",
+    "/videos/bg4.mp4",
+    "/videos/bg5.mp4",
+    "/videos/bg6.mp4",
+    "/videos/bg7.mp4",
+    "/videos/bg8.mp4",
   ],
 
   // 默认封面图
@@ -55,7 +57,7 @@ export const siteConfig = {
   ],
   // 备案号（域名备案通过后填写，例如 "赣ICP备XXXXXXXX号"）
   icpConfig: {
-    name: "",
+    name: "黔ICP备2026016307号-1",
     link: "https://beian.miit.gov.cn/",
   },
   moeIcpConfig: {

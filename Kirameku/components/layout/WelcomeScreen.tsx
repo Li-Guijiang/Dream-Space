@@ -49,18 +49,33 @@ export default function WelcomeScreen() {
             exit={{ scale: 1.1 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
           />
-          <motion.div
-            className="absolute inset-0 opacity-20"
-            style={{
-              backgroundImage: `url(${siteConfig.bgImages[0]})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              filter: "blur(20px)",
-            }}
-            initial={{ scale: 1.2, opacity: 0 }}
-            animate={{ scale: 1, opacity: 0.2 }}
-            transition={{ duration: 1.2 }}
-          />
+          {/\.(mp4|webm|ogg)(\?.*)?$/i.test(siteConfig.bgImages[0]) ? (
+            <motion.video
+              className="absolute inset-0 w-full h-full object-cover opacity-20"
+              src={siteConfig.bgImages[0]}
+              autoPlay
+              loop
+              muted
+              playsInline
+              style={{ filter: "blur(20px)" }}
+              initial={{ scale: 1.2, opacity: 0 }}
+              animate={{ scale: 1, opacity: 0.2 }}
+              transition={{ duration: 1.2 }}
+            />
+          ) : (
+            <motion.div
+              className="absolute inset-0 opacity-20"
+              style={{
+                backgroundImage: `url(${siteConfig.bgImages[0]})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                filter: "blur(20px)",
+              }}
+              initial={{ scale: 1.2, opacity: 0 }}
+              animate={{ scale: 1, opacity: 0.2 }}
+              transition={{ duration: 1.2 }}
+            />
+          )}
 
           {/* 内容 */}
           <div className="relative z-10 text-center px-6">

@@ -66,13 +66,23 @@ export default function SettingsPanel({ onClose }: { onClose: () => void }) {
                     : "border-transparent hover:border-sky-300"
                 }`}
               >
-                <Image
-                  src={img}
-                  alt="背景"
-                  fill
-                  sizes="80px"
-                  className="object-cover"
-                />
+                {/\.(mp4|webm|ogg)(\?.*)?$/i.test(img) ? (
+                  <video
+                    src={img}
+                    muted
+                    playsInline
+                    preload="metadata"
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <Image
+                    src={img}
+                    alt="背景"
+                    fill
+                    sizes="80px"
+                    className="object-cover"
+                  />
+                )}
               </button>
             ))}
           </div>
@@ -80,13 +90,24 @@ export default function SettingsPanel({ onClose }: { onClose: () => void }) {
 
         {/* 当前背景预览 */}
         <div className="relative rounded-xl overflow-hidden border-2 border-white/30 dark:border-white/10 aspect-video">
-          <Image
-            src={bgImage}
-            alt="当前背景"
-            fill
-            sizes="288px"
-            className="object-cover"
-          />
+          {/\.(mp4|webm|ogg)(\?.*)?$/i.test(bgImage) ? (
+            <video
+              src={bgImage}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <Image
+              src={bgImage}
+              alt="当前背景"
+              fill
+              sizes="288px"
+              className="object-cover"
+            />
+          )}
           <button
             type="button"
             title="上一张"
