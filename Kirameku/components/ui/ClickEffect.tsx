@@ -31,6 +31,7 @@ export default function ClickEffect() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particles = useRef<Particle[]>([]);
   const animFrame = useRef<number>(0);
+  const running = useRef(false);
   const disabled = pathname?.startsWith("/garden/") || !clickEffect;
 
   useEffect(() => {
@@ -63,6 +64,14 @@ export default function ClickEffect() {
           decay: 0.015 + Math.random() * 0.015,
         });
       }
+      // 粒子总数限制，防止高频点击堆积导致卡顿
+      if (particles.current.length > 300) {
+        particles.current = particles.current.slice(-200);
+      }
+      if (!running.current) {
+        running.current = true;
+        animFrame.current = requestAnimationFrame(loop);
+      }
     };
 
     const loop = () => {
@@ -80,9 +89,13 @@ export default function ClickEffect() {
         ctx.fill();
       }
       ctx.globalAlpha = 1;
-      animFrame.current = requestAnimationFrame(loop);
+      // 按需运行：有粒子才继续下一帧，无粒子则停止 rAF，避免空转消耗 CPU
+      if (particles.current.length > 0) {
+        animFrame.current = requestAnimationFrame(loop);
+      } else {
+        running.current = false;
+      }
     };
-    loop();
 
     const onClick = (e: MouseEvent) => spawn(e.clientX, e.clientY);
     window.addEventListener("click", onClick);

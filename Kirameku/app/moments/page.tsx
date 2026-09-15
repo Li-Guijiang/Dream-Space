@@ -86,6 +86,7 @@ export default function MomentsPage() {
   const [moments, setMoments] = useState<Moment[]>([]);
   const [loading, setLoading] = useState(true);
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [collapsedDays, setCollapsedDays] = useState<Set<string>>(() => new Set());
   const searchParams = useSearchParams();
   const [onlyViewId, setOnlyViewId] = useState<string | null>(() => searchParams.get("onlyView"));
   const [likedIds, setLikedIds] = useState<Set<string>>(() => {
@@ -297,15 +298,39 @@ export default function MomentsPage() {
         </div>
       )}
 
-      {visibleGroups.map((group, groupIdx) => (
+      {visibleGroups.map((group, groupIdx) => {
+        const isDayCollapsed = collapsedDays.has(group.date);
+        return (
         <motion.div key={group.date} initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: groupIdx * 0.1 }} className="mb-8 md:mb-14 last:mb-0">
-          <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-5">
+          <button
+            type="button"
+            onClick={() => setCollapsedDays((prev) => {
+              const next = new Set(prev);
+              if (next.has(group.date)) next.delete(group.date); else next.add(group.date);
+              return next;
+            })}
+            className="flex items-center gap-2 md:gap-3 mb-3 md:mb-5 w-full group/date cursor-pointer"
+          >
             <span className="text-xs md:text-sm font-bold text-slate-700 dark:text-slate-300">{group.label}</span>
             <span className="text-[10px] md:text-xs text-slate-600 dark:text-slate-400">{group.moments.length} 条</span>
             <div className="flex-1 h-px bg-gradient-to-r from-slate-200 dark:from-slate-700 to-transparent" />
-          </div>
+            {isDayCollapsed ? (
+              <ChevronDown className="w-4 h-4 text-slate-400 group-hover/date:text-sky-500 transition-colors" />
+            ) : (
+              <ChevronUp className="w-4 h-4 text-slate-400 group-hover/date:text-sky-500 transition-colors" />
+            )}
+          </button>
 
+          <AnimatePresence initial={false}>
+            {!isDayCollapsed && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="overflow-hidden"
+              >
           <div className="relative" style={{ minHeight: group.moments.length > 1 ? 100 + (group.moments.length - 1) * 18 : "auto" }}>
             {group.moments.map((moment, i) => {
               const rot = rotations[i % rotations.length];
@@ -458,8 +483,12 @@ export default function MomentsPage() {
               );
             })}
           </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </motion.div>
-      ))}
+        );
+      })}
 
       <AnimatePresence>
         {expandedId && !onlyViewId && (
