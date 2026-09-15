@@ -21,16 +21,18 @@ export default function PhotoWallPreview() {
   const isDragging = useRef(false);
 
   useEffect(() => {
-    const isMobile = window.innerWidth < 768;
-    const targetTitle = isMobile ? "2" : "1";
     getAlbums()
       .then((albums) => {
-        const target = albums.find((a) => a.title === targetTitle);
+        // 优先取"我们的日常"相册，否则取第一个有照片的相册
+        const target =
+          albums.find((a) => a.title === "我们的日常") ||
+          albums.find((a) => (a.photo_count ?? 0) > 0) ||
+          albums[0];
         if (!target) return;
         return getAlbumPhotos(target.id);
       })
       .then((data) => {
-        if (data?.length) setPhotos(data.reverse());
+        if (data?.length) setPhotos(data);
       })
       .catch(() => {});
   }, []);

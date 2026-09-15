@@ -157,6 +157,31 @@ export default async function AboutPage() {
               className="prose prose-sm md:prose-lg prose-slate dark:prose-invert max-w-none text-slate-800 dark:text-slate-200 transition-colors duration-700 leading-relaxed"
               dangerouslySetInnerHTML={{ __html: contentHtml }}
             />
+
+            {/* 微信群二维码 */}
+            <div className="mt-12 md:mt-16 pt-8 md:pt-10 border-t border-slate-300/50 dark:border-slate-700">
+              <div className="flex flex-col items-center text-center gap-4 md:gap-5">
+                <div>
+                  <h2 className="text-lg md:text-2xl font-bold text-slate-900 dark:text-white mb-1 md:mb-2">
+                    加入我们的微信群
+                  </h2>
+                  <p className="text-xs md:text-sm text-slate-500 dark:text-slate-400">
+                    扫码加入技术交流群，一起学习、一起做项目
+                  </p>
+                </div>
+                <div className="relative">
+                  <div className="absolute -inset-3 rounded-3xl bg-gradient-to-r from-sky-500/20 via-indigo-500/20 to-pink-500/20 blur-xl" />
+                  <img
+                    src="/images/wechat-group.png"
+                    alt="微信群二维码"
+                    className="relative w-48 h-auto md:w-56 rounded-2xl shadow-2xl ring-1 ring-black/5 dark:ring-white/10 bg-white p-2"
+                  />
+                </div>
+                <p className="text-[11px] md:text-xs text-slate-400 dark:text-slate-500">
+                  长按或扫描二维码，期待与你相遇
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
