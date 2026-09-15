@@ -66,6 +66,26 @@ export default function SiteDashboard() {
               {siteConfig.icpConfig.name}
             </a>
           )}
+          {siteConfig.gonganConfig?.name && (
+            <a
+              href={siteConfig.gonganConfig.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 hover:text-indigo-500 transition-colors"
+            >
+              {siteConfig.gonganConfig.badgeImage && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={siteConfig.gonganConfig.badgeImage}
+                  alt="公安备案"
+                  className="w-4 h-4 object-contain"
+                />
+              )}
+              <span className="border-b border-dashed border-slate-400 dark:border-slate-500 pb-0.5">
+                {siteConfig.gonganConfig.name}
+              </span>
+            </a>
+          )}
           {siteConfig.moeIcpConfig?.name && (
             <a
               href={siteConfig.moeIcpConfig.link}

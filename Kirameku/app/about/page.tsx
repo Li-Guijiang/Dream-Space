@@ -13,7 +13,7 @@ import FadeIn from "@/components/ui/FadeIn";
 export default async function AboutPage() {
   const fullPath = path.join(process.cwd(), "app", "about", "about.md");
   let contentHtml = "博主很懒，还没有写自我介绍哦...";
-  let coverImage = "/images/2.webp";
+  let coverImage = "/images/9c33b42c990125ea5e9fd540845b1755.png";
 
   try {
     const fileContents = fs.readFileSync(fullPath, "utf8");

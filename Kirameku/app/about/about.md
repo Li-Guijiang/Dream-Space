@@ -1,5 +1,5 @@
 ---
-cover: "/images/2.webp"
+cover: "/images/9c33b42c990125ea5e9fd540845b1755.png"
 ---
 
 ## 你好，我是李贵江

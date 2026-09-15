@@ -27,6 +27,8 @@ export default function BackgroundRenderer() {
               loop
               muted
               playsInline
+              preload="auto"
+              poster={siteConfig.bgPoster || undefined}
             />
           ) : (
             <div

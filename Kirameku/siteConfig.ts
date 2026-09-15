@@ -5,7 +5,7 @@ export const siteConfig = {
   title: "Dream-Space 梦境空间",
   url: "https://dream-space.vip",
   authorName: "李贵江",
-  bio: "你好，我是李贵江。梦境空间（Dream-Space）是我的个人博客，记录技术、生活与随想。",
+  bio: "你好，我是李贵江。梦境空间（Dream—Space）的项目创始人",
 
   // 头像设置
   avatarUrl: "/images/liguijiagn.jpg",
@@ -13,6 +13,8 @@ export const siteConfig = {
   // 背景设置（支持图片 webp/jpg 或视频 mp4，动态壁纸）
   useGradient: false,
   themeColors: ["#a18cd1", "#fbc2eb", "#a1c4fd", "#c2e9fb"],
+  // 视频背景加载前的占位图（可选，留空则直接加载视频）
+  bgPoster: "",
   bgImages: [
     "/videos/bg1.mp4",
     "/videos/bg2.mp4",
@@ -59,6 +61,12 @@ export const siteConfig = {
   icpConfig: {
     name: "黔ICP备2026016307号-1",
     link: "https://beian.miit.gov.cn/",
+  },
+  // 公安联网备案（网站安全备案）
+  gonganConfig: {
+    name: "贵公网安备52052202522645号",
+    link: "https://beian.mps.gov.cn/",
+    badgeImage: "/images/gongan.png",
   },
   moeIcpConfig: {
     name: "",
